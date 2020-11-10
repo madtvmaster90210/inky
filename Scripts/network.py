@@ -74,3 +74,4 @@ draw.text((6, 87), str("IP  ")+str(ipv4), inky_display.YELLOW, font=font)
 #create and draw the image
 inky_display.set_image(img)
 inky_display.show()
+ 
