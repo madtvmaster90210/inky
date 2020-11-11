@@ -57,7 +57,7 @@ print ("IP Variables Loaded")
 img = Image.new("P", (inky_display.WIDTH, inky_display.HEIGHT))
 draw = ImageDraw.Draw(img)
 
-print ("Graphics loaded)
+print ("Graphics loaded")
 
 # import text
 
@@ -75,7 +75,7 @@ draw.text((6, 7), datetime, inky_display.BLACK, font=font)
 #draw.text((6, 21), ''.join(map(str, get_up_stats())), inky_display.BLACK, font$
 #draw.text((6, 31), "T"+str(get_temperature())+"C PR:"+str(get_process_count())$
 
-draw.text((6, 41), str("RAM USAGE:")+str(ram), inky_display.BLACK, font=font)
+draw.text((6, 41), str("Network:")+str(AccessPoint), inky_display.BLACK, font=font)
 
 # Bottom Row
 draw.text((6, 87), str("IP  ")+str(ipv4), inky_display.YELLOW, font=font)
