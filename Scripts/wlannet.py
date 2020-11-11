@@ -32,49 +32,40 @@ def shorten(text, length):
     else:
         return(text)
 
-ram = psutil.virtual_memory().percent
-
 
 print ("Functions loaded")
 
 
-datetime = time.strftime("%d/%m %H:%M")
 
-
-
-# Grab IPv4 and define variable
+## Grab IPv4 and define variable additional networking variables
 
 ipv4 = os.popen('ip addr show wlan0 | grep "\<inet\>" | awk \'{ print $2 }\' | awk -F "/" \'{ print $1 }\'').read().strip()
-
 wlan = os.popen('iw wlan0 station dump | grep "signal:" | tr  -d "[:blank:]" ').read().strip()
-
 AccessPoint = os.popen('iwgetid -r').read().strip()
+datetime = time.strftime("%d/%m %H:%M")
 
 print ("IP Variables Loaded")
 
-# Load graphic
+## Load graphic
 
 img = Image.new("P", (inky_display.WIDTH, inky_display.HEIGHT))
 draw = ImageDraw.Draw(img)
 
 print ("Graphics loaded")
 
-# import text
+## import text
 
 from font_fredoka_one import FredokaOne
 font = ImageFont.truetype(FredokaOne, 16)
 
 print ("Text imported")       
        
-# Print text
+##Print text
 # Top Left
 draw.text((6, 7), datetime, inky_display.BLACK, font=font)
 
        
 # Left
-#draw.text((6, 21), ''.join(map(str, get_up_stats())), inky_display.BLACK, font$
-#draw.text((6, 31), "T"+str(get_temperature())+"C PR:"+str(get_process_count())$
-
 draw.text((6, 41), str("Network:")+str(AccessPoint), inky_display.BLACK, font=font)
 
 # Bottom Row
