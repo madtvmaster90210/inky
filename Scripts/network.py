@@ -41,7 +41,7 @@ print ("Time has loaded")
 
 # Grab IPv4 and define variable
 
-ipv4 = os.popen('ip addr show eth0 | grep "\<inet\>" | awk \'{ print $2 }\' | a$
+ipv4 = os.popen('ip addr show eth0 | grep "\<inet\>" | awk \'{ print $2 }\' | awk -F "/" \'{ print $1 }\'').read().strip()
 
 # Load graphic
 
