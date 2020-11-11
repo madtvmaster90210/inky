@@ -8,7 +8,7 @@ from inky.auto import auto
 from inky import InkyPHAT
 from PIL import Image, ImageFont, ImageDraw
 import time
-import psutil
+
 
 #Set display for auto detection and configure display variables
 inky_display = auto()
