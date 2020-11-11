@@ -1,3 +1,6 @@
+##Script to show IP, Connected AP, wifi strength, date, time
+
+
 #import boilerplate
 import os
 import socket
@@ -41,9 +44,9 @@ datetime = time.strftime("%d/%m %H:%M")
 
 # Grab IPv4 and define variable
 
-ipv4 = os.popen('ip addr show wlan0 | grep "\<inet\>" | awk \'{ print $2 }\' | $
+ipv4 = os.popen('ip addr show wlan0 | grep "\<inet\>" | awk \'{ print $2 }\' | awk -F "/" \'{ print $1 }\'').read().strip()
 
-wlan = os.popen('iw wlan0 station dump | grep "signal:" | tr  -d "[:blank:]" ')$
+wlan = os.popen('iw wlan0 station dump | grep "signal:" | tr  -d "[:blank:]" ').read().strip()
 
 # Load graphic
 
