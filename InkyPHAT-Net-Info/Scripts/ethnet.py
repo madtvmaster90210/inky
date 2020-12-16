@@ -16,7 +16,7 @@ scale_size = 1
 padding = 0
 inky_display.set_border(inky_display.WHITE)
 
-os.path.dirname(os.path.abspath("/home/pi/inky/Scripts/"))
+os.path.dirname(os.path.abspath("/home/pi/inky/InkyPHAT-Net-Info/Scripts/"))
 
 ## Grab IPv4 and define variable additional networking variables
 ipv4 = os.popen('ip addr show eth0 | grep "\<inet\>" | awk \'{ print $2 }\' | awk -F "/" \'{ print $1 }\'').read().strip()
