@@ -18,23 +18,7 @@ scale_size = 1
 padding = 0
 inky_display.set_border(inky_display.WHITE)
 
-os.path.dirname(os.path.abspath("/home/pi/inky/Scripts/"))
-
-
-#Functions
-
-def shorten(text, length):
-    # Process text to be shorter than [length] chars
-    str(text)
-    if len(text) > length:
-        newtext = ""
-        for word in text.split():
-            newtext += word[0:4]
-            newtext += "."
-        return(newtext)
-    else:
-        return(text)
-
+os.path.dirname(os.path.abspath("/home/pi/inky/InkyPHAT-Net-Info/Scripts/"))
 
 
 
