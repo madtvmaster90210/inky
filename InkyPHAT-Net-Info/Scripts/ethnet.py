@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 ##Script to show IP, Connected Switch Port, Switch Hostname, VLAN Port, date, time
 
 
