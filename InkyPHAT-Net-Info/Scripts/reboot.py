@@ -16,7 +16,7 @@ padding = 0
 inky_display.set_border(inky_display.WHITE)
 
 #set path
-os.path.dirname(os.path.abspath("/home/pi/inky/Scripts/"))
+os.path.dirname(os.path.abspath("/home/pi/inky/InkyPHAT-Net-Info/Scripts/"))
 
 #Set variables
 cmd = "ifconfig wlan0 | grep 'inet 10' | cut -c 14-25"
