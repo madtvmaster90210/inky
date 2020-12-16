@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 ##Script to show IP, Connected AP, wifi strength, date, time
 
 
@@ -17,6 +18,8 @@ scale_size = 1
 padding = 0
 inky_display.set_border(inky_display.WHITE)
 
+os.path.dirname(os.path.abspath("/home/pi/inky/Scripts/"))
+
 
 #Functions
 
@@ -33,50 +36,54 @@ def shorten(text, length):
         return(text)
 
 
-print ("Functions loaded")
-
 
 
 ## Grab IPv4 and define variable additional networking variables
 
 ipv4 = os.popen('ip addr show wlan0 | grep "\<inet\>" | awk \'{ print $2 }\' | awk -F "/" \'{ print $1 }\'').read().strip()
-wlan = os.popen('iw wlan0 station dump | grep "signal:" | tr  -d "[:blank:]" ').read().strip()
+#wlan = os.popen('iw wlan0 station dump | grep "signal:" | tr  -d "[:blank:]" ').read().strip()
+wlan = os.popen('iwconfig wlan0 | grep -i --color quality | cut -c 45-50').read().strip()
+mac = os.popen('iwlist wlan0 scan | grep "Cell 01" | sed -n -e "s/^.*Address://p" ').read().strip()
 AccessPoint = os.popen('iwgetid -r').read().strip()
+
 datetime = time.strftime("%d/%m %H:%M")
 
-print ("IP Variables Loaded")
+
+
 
 ## Load graphic
 
 img = Image.new("P", (inky_display.WIDTH, inky_display.HEIGHT))
 draw = ImageDraw.Draw(img)
 
-print ("Graphics loaded")
+
 
 ## import text
 
 from font_fredoka_one import FredokaOne
 font = ImageFont.truetype(FredokaOne, 16)
+smallfont = ImageFont.truetype(FredokaOne, 14)
+bigfont = ImageFont.truetype(FredokaOne, 20)
 
-print ("Text imported")       
-       
+
+
 ##Print text
 # Top Left
 draw.text((6, 7), datetime, inky_display.BLACK, font=font)
 
-       
 # Left
-draw.text((6, 41), str("Network:")+str(AccessPoint), inky_display.BLACK, font=font)
+draw.text((6, 30), str("BSSID:  ")+str(AccessPoint), inky_display.BLACK, font=smallfont)
+draw.text((6, 50), str("MAC:  ")+str(mac), inky_display.BLACK, font=font)
 
 # Bottom Row
-draw.text((6, 87), str("IP  ")+str(ipv4), inky_display.YELLOW, font=font)
+draw.text((6, 100), str("IP:  ")+str(ipv4), inky_display.YELLOW, font=font)
 
 # Right
 
 #Top Right
-draw.text((100, 7), wlan, inky_display.BLACK, font=font)
+draw.text((120, 7), str("Signal: ")+str(wlan), inky_display.BLACK, font=font)
 
-print ("Printing Picture, Look already!")
+
 
 #Flip Screen
 #flipped = set_rotation(180)
