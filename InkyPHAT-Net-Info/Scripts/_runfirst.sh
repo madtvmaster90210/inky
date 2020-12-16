@@ -6,5 +6,21 @@
 ##MUST HAVE USB DONGLE - SCRIPT DISABLES ONBOARD WIRELESS!!!!
 
 
-
-sudo apt update && sudo apt upgrade -y && sudo apt install python3 python3-pip python3-buttonshim libatlas-base-dev python3-numpy libopenjp2-7 libtiff5 daemontools daemontools-run lldpd && pip3 install inky[rpi,fonts] pillow && sudo mkdir /etc/service/button && sudo cp /home/pi/inky/InkyPHAT-Net-Info/Scripts/command.py /etc/service/button/command.py && echo '#!/bin/bash' >> /etc/service/button/run && echo 'exec /usr/bin/python3 command.py' >> /etc/service/button/run && sudo chmod u+x /etc/service/button/run && sudo chmod u+x /home/pi/inky/InkyPHAT-Net-Info/Scripts/ethnet.py && sudo chmod u+x /home/pi/inky/InkyPHAT-Net-Info/Scripts/wlannet.py && sudo echo 'dtoverlay=pi3-disable-wifi' >> /boot/config.txt && sudo echo 'dtparam=i2c_arm=on' >> /boot/config.txt && sudo echo 'dtparam=i2s=on' >> /boot/config.txt && sudo echo 'dtparam=spi_arm=on' >> /boot/config.txt && sudo reboot
+sudo apt update && sudo apt upgrade -y;
+sudo apt install -y python3-pip \
+    git \
+    libatlas-base-dev \
+    python3-numpy \
+    libopenjp2-7 \
+    libtiff5 \
+    python3-buttonshim \
+    daemontools \
+    daemontools-run \
+    lldpd; 
+sudo pip3 install inky[rpi,fonts] pillow;
+sudo mkdir /etc/service/button;
+sudo cp /home/pi/inky/InkyPHAT-Net-Info/Scripts/command.py /etc/service/button/command.py;
+echo -e '#!/bin/bash\nexec /usr/bin/python3 command.py' >> /etc/service/button/run;
+sudo chmod u+x /etc/service/button/run;
+sudo echo -e 'dtoverlay=pi3-disable-wifi\ndtparam=i2c_arm=on\ndtparam=i2s=on\ndtparam=spi_arm=on' >> /boot/config.txt;
+sudo reboot
