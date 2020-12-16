@@ -75,5 +75,3 @@ draw.text((120, 7), str("Signal: ")+str(wlan), inky_display.BLACK, font=font)
 
 inky_display.set_image(img)
 inky_display.show()
-
-print ("Done!")
