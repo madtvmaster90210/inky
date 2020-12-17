@@ -27,7 +27,7 @@ sudo apt install -y python3-pip \
 sudo pip3 install inky[rpi,fonts] pillow;
 sudo mkdir /etc/service/button;
 sudo cp /home/pi/inky/InkyPHAT-Net-Info/Scripts/command.py /etc/service/button/command.py;
-echo -e '#!/bin/bash\nexec /usr/bin/python3 command.py' >> /etc/service/button/run;
+sudo echo -e '#!/bin/bash\nexec /usr/bin/python3 command.py' >> /etc/service/button/run;
 sudo chmod u+x /etc/service/button/run;
 sudo echo -e 'dtoverlay=pi3-disable-wifi\ndtparam=i2c_arm=on\ndtparam=i2s=on\ndtparam=spi_arm=on' >> /boot/config.txt;
 sudo reboot
