@@ -6,6 +6,13 @@
 ##MUST HAVE USB DONGLE - SCRIPT DISABLES ONBOARD WIRELESS!!!!
 
 
+
+if [ `whoami` != root ]; then
+    echo '!!!!Run as sudo!!!!!'
+    exit
+fi
+
+
 sudo apt update && sudo apt upgrade -y;
 sudo apt install -y python3-pip \
     git \
