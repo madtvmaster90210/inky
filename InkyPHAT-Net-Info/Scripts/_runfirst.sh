@@ -24,7 +24,7 @@ sudo apt install -y python3-pip \
     daemontools \
     daemontools-run \
     lldpd; 
-sudo pip3 install inky[rpi,fonts] pillow;
+sudo pip3 install inky[rpi,fonts] pillow psutil;
 sudo mkdir /etc/service/button;
 sudo cp /home/pi/inky/InkyPHAT-Net-Info/Scripts/command.py /etc/service/button/command.py;
 sudo echo -e '#!/bin/bash\nexec /usr/bin/python3 command.py' >> /etc/service/button/run;
