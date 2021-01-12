@@ -34,22 +34,22 @@ draw = ImageDraw.Draw(img)
 ## import text
 
 from font_fredoka_one import FredokaOne
-font = ImageFont.truetype(FredokaOne, 16)
-smallfont = ImageFont.truetype(FredokaOne, 14)
-bigfont = ImageFont.truetype(FredokaOne, 20)
+font = ImageFont.truetype(FredokaOne, 14)
+smallfont = ImageFont.truetype(FredokaOne, 12)
+bigfont = ImageFont.truetype(FredokaOne, 16)
 
 ##Print text
 # Top Left
-draw.text((6, 7), datetime, inky_display.BLACK, font=font)
+draw.text((0, 0), datetime, inky_display.BLACK, font=font)
 
 # Left
-draw.text((6, 30), str("PORT:  ")+str(port), inky_display.BLACK, font=smallfont)
-draw.text((6, 50), str("Hostname: "), inky_display.BLACK, font=font)
-draw.text((6, 65), str(switchname), inky_display.BLACK, font=font)
+draw.text((0, 20), str("PORT:  ")+str(port), inky_display.BLACK, font=smallfont)
+draw.text((0, 30), str("Hostname: "), inky_display.BLACK, font=font)
+draw.text((0, 45), str(switchname), inky_display.BLACK, font=font)
 
 # Bottom Row
-draw.text((6, 100), str("IP:  ")+str(ipv4), inky_display.YELLOW, font=font)
-draw.text((120, 100), str("VLAN:  ")+str(vlan), inky_display.YELLOW, font=font)
+draw.text((0, 80), str("IP:  ")+str(ipv4), inky_display.YELLOW, font=font)
+draw.text((120, 80), str("VLAN:  ")+str(vlan), inky_display.YELLOW, font=font)
 
 # Right
 
