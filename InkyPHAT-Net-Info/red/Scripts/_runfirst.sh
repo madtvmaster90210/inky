@@ -30,6 +30,6 @@ sudo cp /home/pi/inky/InkyPHAT-Net-Info/red/Scripts/command.py /etc/service/butt
 sudo echo -e '#!/bin/bash\nexec /usr/bin/python3 command.py' >> /etc/service/button/run;
 sudo chmod u+x /etc/service/button/run;
 sudo echo -e 'dtparam=i2c_arm=on\ndtparam=spi=on' >> /boot/config.txt;
-sudo echo -e 'blacklist brcmfmac\nblacklist brcmutil' >> /etc/modprobe.d/raspi-blacklist.conf
-sudo echo -e 'interface wlan0\nrequest 10.0.0.1\ninterface eth0\n10.0.0.1' >> /etc/dhcpcd.conf
+sudo echo -e 'blacklist brcmfmac\nblacklist brcmutil' >> /etc/modprobe.d/raspi-blacklist.conf;
+sudo echo -e 'interface wlan0\nrequest 10.0.0.1\ninterface eth0\n10.0.0.1' >> /etc/dhcpcd.conf;
 sudo reboot
