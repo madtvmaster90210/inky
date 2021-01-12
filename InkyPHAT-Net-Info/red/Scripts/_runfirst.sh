@@ -26,8 +26,10 @@ sudo apt install -y python3-pip \
     lldpd; 
 sudo pip3 install inky[rpi,fonts] pillow psutil;
 sudo mkdir /etc/service/button;
-sudo cp /home/pi/inky/InkyPHAT-Net-Info/Scripts/command.py /etc/service/button/command.py;
+sudo cp /home/pi/inky/InkyPHAT-Net-Info/red/Scripts/command.py /etc/service/button/command.py;
 sudo echo -e '#!/bin/bash\nexec /usr/bin/python3 command.py' >> /etc/service/button/run;
 sudo chmod u+x /etc/service/button/run;
-sudo echo -e 'dtoverlay=pi3-disable-wifi\ndtparam=i2c_arm=on\ndtparam=i2s=on\ndtparam=spi_arm=on' >> /boot/config.txt;
+sudo echo -e 'dtparam=i2c_arm=on\ndtparam=spi=on' >> /boot/config.txt;
+sudo echo -e 'blacklist brcmfmac\nblacklist brcmutil' >> /etc/modprobe.d/raspi-blacklist.conf
+sudo echo -e 'interface wlan0\nrequest 10.0.0.1\ninterface eth0\n10.0.0.1' >> /etc/dhcpcd.conf
 sudo reboot
