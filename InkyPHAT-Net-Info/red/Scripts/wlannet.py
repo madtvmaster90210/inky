@@ -45,27 +45,27 @@ draw = ImageDraw.Draw(img)
 ## import text
 
 from font_fredoka_one import FredokaOne
-font = ImageFont.truetype(FredokaOne, 16)
-smallfont = ImageFont.truetype(FredokaOne, 14)
-bigfont = ImageFont.truetype(FredokaOne, 20)
+font = ImageFont.truetype(FredokaOne, 14)
+smallfont = ImageFont.truetype(FredokaOne, 12)
+bigfont = ImageFont.truetype(FredokaOne, 16)
 
 
 
 ##Print text
 # Top Left
-draw.text((6, 7), datetime, inky_display.BLACK, font=font)
+draw.text((0, 0), datetime, inky_display.BLACK, font=font)
 
 # Left
-draw.text((6, 30), str("BSSID:  ")+str(AccessPoint), inky_display.BLACK, font=smallfont)
-draw.text((6, 50), str("MAC:  ")+str(mac), inky_display.BLACK, font=font)
+draw.text((0, 20), str("BSSID:  ")+str(AccessPoint), inky_display.BLACK, font=smallfont)
+draw.text((0, 40), str("MAC:  ")+str(mac), inky_display.BLACK, font=font)
 
 # Bottom Row
-draw.text((6, 100), str("IP:  ")+str(ipv4), inky_display.YELLOW, font=font)
+draw.text((0, 80), str("IP:  ")+str(ipv4), inky_display.YELLOW, font=font)
 
 # Right
 
 #Top Right
-draw.text((120, 7), str("Signal: ")+str(wlan), inky_display.BLACK, font=font)
+draw.text((85, 0), str("Signal: ")+str(wlan), inky_display.BLACK, font=font)
 
 
 
