@@ -11,10 +11,10 @@ import runpy
 
 @buttonshim.on_press(buttonshim.BUTTON_A)
 def handler(button, pressed):
-	runpy.run_path(path_name='/home/pi/inky/InkyPHAT-Net-Info/Scripts/wlannet.py')
+	runpy.run_path(path_name='/home/pi/inky/InkyPHAT-Net-Info/red/Scripts/wlannet.py')
 
 @buttonshim.on_press(buttonshim.BUTTON_B)
 def handler(button, pressed):
-	runpy.run_path(path_name='/home/pi/inky/InkyPHAT-Net-Info/Scripts/ethnet.py')
+	runpy.run_path(path_name='/home/pi/inky/InkyPHAT-Net-Info/red/Scripts/ethnet.py')
 
 signal.pause()
