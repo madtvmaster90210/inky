@@ -34,5 +34,5 @@ sudo echo -e '\\ndtparam=i2c_arm=on\ndtparam=spi=on\ndtoverlay=pi3-disable-bt\nd
 sudo systemctl disable hciuart;
 sudo echo -e 'blacklist brcmfmac\nblacklist brcmutil\nblacklist btbcm\nblacklist hci_uart' >> /etc/modprobe.d/raspi-blacklist.conf;
 #sudo echo -e '\\ninterface wlan0\nrequest 10.0.0.1\ninterface eth0\nrequest 10.0.0.1' >> /etc/dhcpcd.conf;
-sudo ./netcmd.sh
+sudo sh /home/pi/inky/InkyPHAT-Net-Info/red/Scripts/netcmd.sh
 sudo reboot
