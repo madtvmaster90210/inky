@@ -30,7 +30,7 @@ sudo mkdir /etc/service/button;
 sudo cp /home/pi/inky/InkyPHAT-Net-Info/red/Scripts/command.py /etc/service/button/command.py;
 sudo echo -e '#!/bin/bash\nexec /usr/bin/python3 command.py' >> /etc/service/button/run;
 sudo chmod u+x /etc/service/button/run;
-sudo echo -e '\\ndtparam=i2c_arm=on\ndtparam=spi=on\ndtoverlay=pi3-disable-bt\ndtoverlay=pi3-disable-wifi' >> /boot/config.txt;
+sudo echo -e '\ndtparam=i2c_arm=on\ndtparam=spi=on\ndtoverlay=pi3-disable-bt\ndtoverlay=pi3-disable-wifi' >> /boot/config.txt;
 sudo systemctl disable hciuart;
 sudo echo -e 'blacklist brcmfmac\nblacklist brcmutil\nblacklist btbcm\nblacklist hci_uart' >> /etc/modprobe.d/raspi-blacklist.conf;
 #sudo echo -e '\\ninterface wlan0\nrequest 10.0.0.1\ninterface eth0\nrequest 10.0.0.1' >> /etc/dhcpcd.conf;
