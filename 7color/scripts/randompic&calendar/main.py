@@ -164,7 +164,10 @@ class ImageFrame:
 imageFrame = ImageFrame(cwd)
 
 # start with a random image otherwise things get boring fast...!
+
 imageFrame.display_random_image();
+
 while True:
     time.sleep(MIN_SLEEP_BETWEEN_IMAGES)
+    imageFrame.clear_screen() #clear screen before display
     imageFrame.display_next_image()
