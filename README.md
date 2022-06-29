@@ -3,9 +3,9 @@ My InkyPHAT Scripts
  =============
 The following page includes scripts I created or modified for the Pimoroni InkyPHAT eInk display.
 Additional github's I utilized for code:
-https://github.com/pimoroni/button-shim
-https://github.com/KodeMunkie/inky-impression-slideshow
-https://github.com/pimoroni/inky/blob/master/
+* https://github.com/pimoroni/button-shim
+* https://github.com/KodeMunkie/inky-impression-slideshow
+* https://github.com/pimoroni/inky/blob/master/
 
 ## InkypHat ##
 The InkyPhat scripts here currently only work for the red or yellow display (I cannot recall). This is the 250x122 pixel e-paper display. The Library is Python3.
