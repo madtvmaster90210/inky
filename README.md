@@ -7,8 +7,8 @@ Additional github's I utilized for code:
 * https://github.com/KodeMunkie/inky-impression-slideshow
 * https://github.com/pimoroni/inky/blob/master/
 
-## InkypHat ##
-The InkyPhat scripts here currently only work for the red or yellow display (I cannot recall). This is the 250x122 pixel e-paper display. The Library is Python3.
+## InkyPHAT ##
+The InkyPHAT scripts here currently only work for the red or yellow display (I cannot recall). This is the 250x122 pixel e-paper display. The Library is Python3.
 
 This script assumes you have a rapsberry Pi connected to the InkypHat red display, as well as the Pimoroni Button Shim connected.
 
@@ -17,6 +17,7 @@ The InkyPHAT-Access-Point-Info will only give wireless Access Point information.
 The InkyPHAT-Net-Info will give you both wireless access point information, as well as switch port information if connected to the ethernet port.
 
 ***You must have USB Wireless dongle - script will DISABLE onboard wireless adapter, as it is not reliable.***
+
 ***Be sure to enable reqiured GPIO pins (i.e. raspi-config, enable SPI, etc.)***
 
 1. Git clone repo `https://github.com/madtvmaster90210/inky.git`
@@ -29,6 +30,8 @@ The InkyPHAT-Net-Info will give you both wireless access point information, as w
 
 
 ## Inky Impression ##
+***Image quality varies. Future improvements to process may occur, such as messing with dither and saturation.***
+
 Script involves showing random picutres from the 'images' folder obtained with a git clone. Folder structure MUST exist as is in order for the script to call upon the correct assets. This was also done with Python3 library.
 1. Git clone repo `https://github.com/madtvmaster90210/inky.git`
 2. create Cron job to run main.py script at reboot.
