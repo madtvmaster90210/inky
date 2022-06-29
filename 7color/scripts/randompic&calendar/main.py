@@ -29,7 +29,7 @@ from font_source_serif_pro import SourceSerifProSemibold
 from font_source_sans_pro import SourceSansProSemibold
 
 # minimum time in seconds before the image changes
-MIN_SLEEP_BETWEEN_IMAGES = 30
+MIN_SLEEP_BETWEEN_IMAGES = 45
 
 # extensions to load
 EXTENSIONS = ('*.png', '*.jpg')
@@ -56,7 +56,7 @@ saturation = 0
 clear = Image.new("P", (inky.width, inky.height), 7)
 dpi = 80
 cwd = os.getcwd()
-cwd_im = (os.getcwd() + "/images/")
+cwd_im = (os.getcwd() + "/pictures/")
 
 
 def reflow_quote(quote, width, font):
@@ -259,7 +259,7 @@ class ImageFrame:
 
 			
 			
-imageFrame = ImageFrame(cwd)
+imageFrame = ImageFrame(cwd_im)
 
 # start with a random image otherwise things get boring fast...!
 quoteyMcQuote.show_quote();
