@@ -10,6 +10,21 @@ Additional github's I utilized for code:
 ## InkypHat ##
 The InkyPhat scripts here currently only work for the red or yellow display (I cannot recall). This is the 250x122 pixel e-paper display. The Library is Python3.
 
+This script assumes you have a rapsberry Pi connected to the InkypHat red display, as well as the Pimoroni Button Shim connected.
+
+The InkyPHAT-Access-Point-Info will only give wireless Access Point information.
+
+The InkyPHAT-Net-Info will give you both wireless access point information, as well as switch port information if connected to the ethernet port.
+
+***You must have USB Wireless dongle - script will DISABLE onboard wireless adapter, as it is not reliable.***
+
+1. Git clone repo `https://github.com/madtvmaster90210/inky.git`
+2. Adjust the wifi.txt file with your known wireless network info.
+3. Copy the wifi.txt file into your /boot partition
+4. run the _runfirst.sh script
+5. If all went well (which is never the case) the display should now show wifi and wired info depending on button selected.
+* Button 1 - Display Wireless Info
+* Button 2 - Display Wired Info
 
 
 ## Inky Impression ##
