@@ -22,7 +22,7 @@ if cache['python3-numpy'].is_installed:
 else:
 	print ("Please run sudo apt install python3-numpy.")
 	exit()
-if cache['libatlas-base-dev'].is_installed:
+if cache['libatlas-base-dev'].is_installed: ###only needed for Raspberry Pi's####
 	print ("libatlas-base-dev is installed")
 else:
 	print ("Please run sudo apt install libatlas-base-dev")
@@ -37,7 +37,7 @@ try:
 except ImportError:
 	print("Attempting to install RPi.GPIO")
 	subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'RPi.GPIO'])
-try:
+try:  
 	from inky.inky_uc8159 import Inky
 except ImportError:
 	print("Attempting to install Inky")
