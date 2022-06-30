@@ -145,7 +145,7 @@ class quoteyMcQuote:
 		below_max_length = False
 		while not below_max_length:
 			person = random.choice(people)
-			quote = "Inky Impression is on. Current IP is {ipaddr}. If the images folder has images, they will display shortly." 
+			quote = f"Inky Impression is on. Current IP is {ipaddr}. If the images folder has images, they will display shortly." 
 			reflowed = reflow_quote(quote, max_width, quote_font)
 			p_w, p_h = quote_font.getsize(reflowed)
 			p_h = p_h * (reflowed.count("\n") + 1)
@@ -248,7 +248,6 @@ class ImageFrame:
 #                    for x in range(inky.width - 1):
 #                        inky.set_pixel(x, y, CLEAN)
 #                inky.show()
-            print("Got past troublesome place")
             image = Image.open(self.images[number])
             resizedimage = image.resize(inky.resolution)
             print('Diffusing image ', self.images[number])
@@ -299,15 +298,10 @@ class ImageFrame:
         elif last_button == 3:
             imageFrame.clear_screen()
             subprocess.call(cwd + "/inkycalendar.py", shell=True)
-
-
-			
-
-			
 			
 imageFrame = ImageFrame(cwd_im)
 
-# start with a random image otherwise things get boring fast...!
+# start with a image of IP address message!
 quoteyMcQuote.show_quote();
 while True:
     time.sleep(MIN_SLEEP_BETWEEN_IMAGES)
