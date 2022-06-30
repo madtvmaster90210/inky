@@ -11,6 +11,15 @@ import subprocess
 import sys
 from subprocess import check_call, CalledProcessError
 cache = apt.Cache()
+
+def chwd():
+    script = os.path.realpath(__file__)
+    path = os.path.dirname(script)
+    os.chdir(path)
+
+if __name__ == '__main__':
+    chwd()
+
 if cache['python3-pip'].is_installed:
 	print ("python3-pip is installed")
 else: 
