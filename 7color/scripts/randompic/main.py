@@ -51,7 +51,11 @@ try:
 except ImportError:
 	print("Attempting to install Inky")
 	subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'inky==1.3.1'])
-
+try:  
+        from resizeimage import resizeimage
+except ImportError:
+        print("Attempting to install python-resize-image")
+        subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'python-resize-image'])
 try:
         from font_source_serif_pro import SourceSerifProSemibold
 except ImportError:
@@ -79,7 +83,7 @@ import RPi.GPIO as GPIO
 import textwrap
 from PIL import Image, ImageDraw, ImageFont
 from inky.inky_uc8159 import Inky, CLEAN, DESATURATED_PALETTE
-from inky import Inky7Colour as Inky
+from inky.inky_uc8159 import Inky as Inky7Colour
 from font_source_serif_pro import SourceSerifProSemibold
 from font_source_sans_pro import SourceSansProSemibold
 
