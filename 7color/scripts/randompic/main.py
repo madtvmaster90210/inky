@@ -36,11 +36,11 @@ if cache['libatlas-base-dev'].is_installed: ###only needed for Raspberry Pi's###
 else:
 	print ("Please run sudo apt install libatlas-base-dev")
 	exit()
-
 try:
 	from PIL import Image, ImageDraw, ImageFont
 except ImportError:
 	print("Please run sudo apt install python3-pil")
+	exit()
 try:
 	import RPi.GPIO
 except ImportError:
