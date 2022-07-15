@@ -1,5 +1,5 @@
 # inky #
-My InkyPHAT Scripts
+My InkyPHAT and Inky Impression Scripts
  =============
 The following page includes scripts I created or modified for the Pimoroni InkyPHAT eInk display.
 Additional github's I utilized for code:
