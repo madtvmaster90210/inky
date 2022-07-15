@@ -1,3 +1,0 @@
-#!/bin/bash
-ssid="wirelessname"
-password="password"
