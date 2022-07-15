@@ -17,6 +17,15 @@ The InkyPHAT-Access-Point-Info will only give wireless Access Point information.
 
 The InkyPHAT-Net-Info will give you both wireless access point information, as well as switch port information if connected to the ethernet port.
 
+## Hardware ##
+
+* [Inky Impression](https://shop.pimoroni.com/products/inky-impression-5-7)
+* [InkyPHAT](https://shop.pimoroni.com/products/inky-phat)
+* [Button Shim for PHAT](https://shop.pimoroni.com/products/button-shim)
+* Raspberry Pi
+* Wireless USB Dongle
+* SD Card
+
 ***You must have USB Wireless dongle - script will DISABLE onboard wireless adapter, as it is not reliable.***
 
 ***Be sure to enable reqiured GPIO pins (i.e. raspi-config, enable SPI, etc.)***
