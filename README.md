@@ -5,7 +5,8 @@ The following page includes scripts I created or modified for the Pimoroni InkyP
 Additional github's I utilized for code:
 * https://github.com/pimoroni/button-shim
 * https://github.com/KodeMunkie/inky-impression-slideshow
-* https://github.com/pimoroni/inky/blob/master/
+* https://github.com/pimoroni/inky/
+* https://github.com/Hothomir/weather-report
 
 ## InkyPHAT ##
 The InkyPHAT scripts here currently only work for the red or yellow display (I cannot recall). This is the 250x122 pixel e-paper display. The Library is Python3.
