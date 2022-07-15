@@ -1,12 +1,4 @@
-# WEATHER DISPLAY - Bartosz Jaskulski
-#
-#
-# --- PLEASE READ ---
-# This script is for Pimoroni Inky *Impression* Displays ONLY
-# Please use main.py if you have an Inky wHAT
-# --- PLEASE READ ---
-#
-#
+#!/usr/bin/env python3
 
 import os, sys
 from datetime import datetime, timedelta
