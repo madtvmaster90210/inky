@@ -36,12 +36,13 @@ Script involves showing random picutres from the 'images' folder obtained with a
 1. Git clone repo `https://github.com/madtvmaster90210/inky.git`
 2. create Cron job to run main.py script at reboot.
 3. Use WinSCP or another method to put images (Must be .JPG or .PNG format) in the images folder.
-4. Reboot!
+4. Edit configfile.ini with your API key from OpenWeatherMaps (https://openweathermap.org/api), longitude and latitiude, and 2 digit country code.
+5. Reboot!
 
 The button layout is as follows:
 * Button 1 - Random image
 * Button 2 - Next image from folder
-* Button 3 - Previous image from folder
+* Button 3 - Show Weather
 * Button 4 - Show Calendar
 
 Upon reboot, the device will display the IP address of it's wireless connection. 
