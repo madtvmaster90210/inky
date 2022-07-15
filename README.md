@@ -57,6 +57,23 @@ The button layout is as follows:
 
 Upon reboot, the device will display the IP address of it's wireless connection. 
 
+# Recurring Display Refreshes
+To get new weather information in timed intervals, I've used crontab. Crontab schedules when to run the main.py file and is flexible with how often it should be run. You can also create cron jobs for weather-main.py and inkycalendar.py to have them cycle through periodically, rather than soley rely on the buttons.
+
+I've set up the crontab job to run every 30 minutes, so the display will refresh every 30 minutes. Example:
+1. Open crontab in terminal
+```
+crontab -e
+```
+2. At the bottom of the crontab file, provide the following line:
+```
+*/30 * * * * python /home/pi/weather-report/main.py
+```
+3. To refresh the display every 60 mins (every hour):
+```
+*/60 * * * * python /home/pi/weather-report/main.py
+```
+
 
 Inky Python3 Library - https://github.com/pimoroni/inky 
 
