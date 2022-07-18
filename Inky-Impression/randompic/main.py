@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 #This script is to be scheduled with Cron to run at boot in background
-#REQUIRES modules below, script should install them
-#You must have the fonts and images folder in same directory as script.
 #inkycalendar.py and image_processor.py must also be in the same directory.
-#Please install python3-pip and python3-numpy prior to running
+
 
 import os
 import apt
@@ -19,7 +17,6 @@ def chwd():
 
 if __name__ == '__main__':
     chwd()
-
 
 import glob
 import argparse
@@ -38,6 +35,10 @@ from inky.inky_uc8159 import Inky, CLEAN, DESATURATED_PALETTE
 from inky.inky_uc8159 import Inky as Inky7Colour
 from font_source_serif_pro import SourceSerifProSemibold
 from font_source_sans_pro import SourceSansProSemibold
+
+st = speedtest.Speedtest()
+st.get_best_server()
+
 
 # minimum time in seconds before the image changes
 MIN_SLEEP_BETWEEN_IMAGES = 45
@@ -104,13 +105,13 @@ class quoteyMcQuote:
 		author_font = ImageFont.truetype(SourceSerifProSemibold, font_size)
 		quote_font = ImageFont.truetype(SourceSansProSemibold, font_size)
 		people = ["Ted"]
-		padding = 50
+		padding = 60
 		max_width = w - padding
 		max_height = h - padding - author_font.getsize("ABCD ")[1]
 		below_max_length = False
 		while not below_max_length:
 			person = random.choice(people)
-			quote = f"Inky Impression is on. Current IP is {ipaddr}. If the images folder has images, they will display shortly." 
+			quote = f"Inky Impression is on. Current IP is {ipaddr}. Latency is {st.results.ping} ms. Download Speed is {round(st.download() / 1000 / 1000, 1)} Mbit/s. Your Upload speed is {round(st.upload() / 1000 / 1000, 1)} Mbit/s." 
 			reflowed = reflow_quote(quote, max_width, quote_font)
 			p_w, p_h = quote_font.getsize(reflowed)
 			p_h = p_h * (reflowed.count("\n") + 1)
@@ -118,7 +119,7 @@ class quoteyMcQuote:
 				below_max_length = True
 			else:
 				continue
-		quote = f"Inky Impression is on. Current IP is {ipaddr}. If the images folder has images, they will display shortly."
+		quote = f"Inky Impression is on. Current IP is {ipaddr}. Latency is {st.results.ping} ms. Download Speed is {round(st.download() / 1000 / 1000, 1)} Mbit/s. Your Upload speed is {round(st.upload() / 1000 / 1000, 1)} Mbit/s." 
 		reflowed = reflow_quote(quote, max_width, quote_font)
 		p_w, p_h = quote_font.getsize(reflowed)
 		p_h = p_h * (reflowed.count("/n") + 2)
