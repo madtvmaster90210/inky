@@ -20,54 +20,6 @@ def chwd():
 if __name__ == '__main__':
     chwd()
 
-if cache['python3-pip'].is_installed:
-	print ("python3-pip is installed")
-else: 
-	print ("Please run sudo apt install python3-pip.")
-	exit()
-
-if cache['python3-numpy'].is_installed:
-	print ("python3-numpy is installed")
-else:
-	print ("Please run sudo apt install python3-numpy.")
-	exit()
-if cache['libatlas-base-dev'].is_installed: ###only needed for Raspberry Pi's####
-	print ("libatlas-base-dev is installed")
-else:
-	print ("Please run sudo apt install libatlas-base-dev")
-	exit()
-try:
-	from PIL import Image, ImageDraw, ImageFont
-except ImportError:
-	print("Please run sudo apt install python3-pil")
-	exit()
-try:
-	import RPi.GPIO
-except ImportError:
-	print("Attempting to install RPi.GPIO")
-	subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'RPi.GPIO'])
-try:  
-	from inky.inky_uc8159 import Inky
-except ImportError:
-	print("Attempting to install Inky")
-	subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'inky==1.3.1'])
-try:  
-        from resizeimage import resizeimage
-except ImportError:
-        print("Attempting to install python-resize-image")
-        subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'python-resize-image'])
-try:
-        from font_source_serif_pro import SourceSerifProSemibold
-except ImportError:
-        print("Attempting to install font 1 of 2")
-        subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'font_source_serif_pro'])
-
-try:
-        from font_source_sans_pro import SourceSansProSemibold
-except ImportError:
-        print("Attempting to install font 2 of 2")
-        subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'font_source_sans_pro'])
-
 
 import glob
 import argparse
