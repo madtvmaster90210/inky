@@ -21,12 +21,9 @@ if __name__ == '__main__':
 import glob
 import argparse
 import socket
-import sys
 import time
-import image_processor
 import random
 from random import randrange
-import subprocess
 import signal
 import RPi.GPIO as GPIO
 import textwrap
@@ -35,13 +32,14 @@ from inky.inky_uc8159 import Inky, CLEAN, DESATURATED_PALETTE
 from inky.inky_uc8159 import Inky as Inky7Colour
 from font_source_serif_pro import SourceSerifProSemibold
 from font_source_sans_pro import SourceSansProSemibold
-
+import speedtest
+# import image-processor
 st = speedtest.Speedtest()
 st.get_best_server()
 
 
 # minimum time in seconds before the image changes
-MIN_SLEEP_BETWEEN_IMAGES = 45
+MIN_SLEEP_BETWEEN_IMAGES = 300
 
 # extensions to load
 EXTENSIONS = ('*.png', '*.jpg')
