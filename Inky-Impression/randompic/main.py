@@ -8,7 +8,7 @@ import apt
 import subprocess
 import sys
 from subprocess import check_call, CalledProcessError
-cache = apt.Cache()
+
 
 def chwd():
     script = os.path.realpath(__file__)
